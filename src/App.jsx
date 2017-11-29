@@ -8,13 +8,14 @@ class App extends Component { //parent component
     super(props);
 
     this.state = {
-      raceTracks: [],    
+      raceTracks: [],  
+      selected: null,  
     };
 
     this.count = 0;
     
     this.handleGrandPrixName = this.handleGrandPrixName.bind(this);
-    this.handleTodo = this.handleTodo.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillMount() {
@@ -46,30 +47,25 @@ class App extends Component { //parent component
   }
 
   handleGrandPrixName(e) {
-    this.setState({ GrandPrixName: e.target.value });
+    this.setState({ grandPrixName: e.target.value });
   }
 
-  handleTodo(e) {
+  handleClick(e) {
     e.preventDefault();
-    if (this.state.GrandPrixName === '0') {
+    if (this.state.grandPrixName === '0') {
       return false;
     }
+
+    let grandPrixInfo = this.state.raceTracks.find((race) => {
+      return race.name === this.state.grandPrixName;
+    })
+
+    this.setState({ selected: grandPrixInfo });
+    // else if(this.state.grandPrixName === this.state.racetracks.name) {
+    // } //return the data just from that specific track
   }
-    // const userText = this.state.text;
-    // const userPriority = this.state.priority;
-    // const todos = this.state.todos;
-
-    // todos.push({
-    //   id: this.count++,
-    //   text: userText,
-    //   priority: userPriority,
-    //   editEnable: false 
-    // });
-
-    // this.setState({
-    //   todos:todos 
-    // })
   
+    
 
   render() {
     return (
@@ -83,16 +79,7 @@ class App extends Component { //parent component
                 {/* <div className="card-header">Enter Information</div> */}
                 <div className="card-body">
                   <div>
-                    <form onSubmit={this.handleTodo}>
-                      {/* <div className="form-group">
-                        <label htmlFor="textArea">I want to...</label>
-                        <textarea
-                          className="form-control create-todo-text" 
-                          id="textArea"
-                          rows="3"
-                          onChange={this.handleText}
-                        />
-                      </div> */}
+                    {/* <form onSubmit={this.handleClick}> */}
                       <div className="form-group">
                         <label htmlFor="exampleFormControlSelect1">
                           Choose a Grand Prix
@@ -101,7 +88,7 @@ class App extends Component { //parent component
                           className="mt-2 mb-4 form-control create-todo-priority"
                           id="exampleFormControlSelect1"
                           onChange={this.handleGrandPrixName} 
-                          defaultValue={this.state}
+                          // defaultValue={this.state}
                         >
                         <option value="0" name="grandPrixName">Select Race</option>  
                         { this.state.raceTracks && this.state.raceTracks.map((race, index) => {
@@ -111,12 +98,13 @@ class App extends Component { //parent component
                       </div>
                     
                       <button
+                        onClick={this.handleClick}
                         type="submit"
                         className="btn btn-primary btn-block create-todo"
                       >
                         Find Track!
                       </button>
-                    </form>
+                    {/* </form> */}
                   </div>
                 </div>
               </div>
@@ -126,21 +114,8 @@ class App extends Component { //parent component
                 <div className="card-header">Circuit Info</div>
                 <div className="card-body" />
                 <div className="container">
-                <p>
-                  
-                </p>
-                  {/* {this.state.todos.map((todo, index) => {
-                    //console.log(index);
-                    return <Alert
-                      todo={todo}
-                      key={index}
-                      //onSave={this.handleSave} 
-                      //onDelete={this.handleDelete}
-                      //these are all props that are being rendered in alert
-                    />
-                    //are we going to put the id of the todo in this function?
-                  })
-                  } */}
+                { !!this.state.selected && <Alert race={this.state.selected} />}
+                {/* Selected has a default value of null which is falsey, basically saying if selected is not null do the Alert call */}
                </div>
               </div>
             </div>
