@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Alert from './Alert'; 
+import Maps from './Maps';
 
 const axios = require("axios");
 
@@ -61,8 +62,7 @@ class App extends Component { //parent component
     })
 
     this.setState({ selected: grandPrixInfo });
-    // else if(this.state.grandPrixName === this.state.racetracks.name) {
-    // } //return the data just from that specific track
+
   }
   
     
@@ -119,6 +119,17 @@ class App extends Component { //parent component
                </div>
               </div>
             </div>
+
+            <div className="col-md-8">
+              <div className="mt-4 card">
+                <div className="card-header">Map Page</div>
+                <div className="card-body" />
+                <div className="container">
+                { !!this.state.selected && <Maps race={this.state.selected} />}
+               </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

@@ -1,3 +1,7 @@
 {
-  "presets": ["react"]
+  "presets": ["babel-preset-stage-0","react"]
+//had an error with static default props. Reason was bc static defaul props is part of the new version of es6 in 2017.
+//babel is a compiler that needs to recognize the code to convert it into basic js for the browser
+//babel needed to be updated to be able to recognize the new syntax to compile it
+//in babelrc added "babel-preset-stage-0"
 }
