@@ -4,4 +4,5 @@
 //babel is a compiler that needs to recognize the code to convert it into basic js for the browser
 //babel needed to be updated to be able to recognize the new syntax to compile it
 //in babelrc added "babel-preset-stage-0"
+//Must do: npm install --save babel-preset-stage-0
 }

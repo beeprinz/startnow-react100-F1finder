@@ -71,8 +71,8 @@ class App extends Component { //parent component
     return (
       <div>
         <div className="container">
-          <h1>Formula 1 Track Locator</h1>
-          <p>Discover Circuits Around the World!</p>
+          <h1 style={{color: 'white'}}>Formula 1 Track Locator</h1>
+          <h5 style={{color: 'white'}}>Discover Circuits Around the World!</h5>
           <div className="row">
             <div className="col-md-4">
               <div className="card">
@@ -121,12 +121,13 @@ class App extends Component { //parent component
             </div>
 
             <div className="col-md-8">
-              <div className="mt-4 card">
-                <div className="card-header">Map Page</div>
-                <div className="card-body" />
-                <div className="container">
-                { !!this.state.selected && <Maps race={this.state.selected} />}
-               </div>
+              <div className="mt-4 mb-4 card">
+                <div className="card-header">Explore Circuit in Map, Satellite View Recommended</div>
+                <div className="card-body">
+                  <div className="container">
+                  { !!this.state.selected && <Maps race={this.state.selected} />}
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -11,7 +11,8 @@ export class MapContainer extends React.Component {
           center={{lat: this.props.race.circuit.lat, lng: this.props.race.circuit.lon}}
           
           zoom={14}
-          style={{width: '95%', height: '250%', position: 'relative'}}
+          style={{width: '100%', height: '250px', position: 'relative'}}
+          containerStyle={{position: 'relative', width: '100%', height:'250px'}}
           >
 
     
