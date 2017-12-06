@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Alert from './Alert'; 
-import Maps from './Maps';
+import Alert from './alert'; 
+import Maps from './maps';
 
 const axios = require("axios");
 
