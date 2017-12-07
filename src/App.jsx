@@ -20,8 +20,11 @@ class App extends Component { //parent component
   }
 
   componentWillMount() {
+    //had to make a proxy server since heroku needed an https req not http
+    //in server.js made a new route /api which collects data from the api and then this axios req
+    //will pull the data from the proxy /api using https fixing the issue
     axios
-      .get("http://ergast.com/api/f1/2017.json")
+      .get("/api")
       .then(response => {
         let races = response.data.MRData.RaceTable.Races;
         races = races.map((race) => {

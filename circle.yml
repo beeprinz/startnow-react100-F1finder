@@ -2,7 +2,7 @@ deployment:
   prod:
     branch: master
     heroku:
-      appname: bp-react100changecalculator
+      appname: bp-f1circuitfinder
 machine:
   node:
     version: 8.1.4
