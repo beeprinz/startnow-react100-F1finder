@@ -1,6 +1,6 @@
 {
   "name": "vstda",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "REACT100 Assignment - VSTDA",
   "main": "server/index.js",
   "scripts": {
