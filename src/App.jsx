@@ -77,12 +77,12 @@ class App extends Component { //parent component
           <h1 style={{color: 'white'}}>Formula 1 Track Locator</h1>
           <h5 style={{color: 'white'}}>Discover Circuits Around the World!</h5>
           <div className="row">
-            <div className="col-md-4">
+            {/* <div className="col-md-4">
               <div className="card">
-                {/* <div className="card-header">Enter Information</div> */}
+                
                 <div className="card-body">
                   <div>
-                    {/* <form onSubmit={this.handleClick}> */}
+                    
                       <div className="form-group">
                         <label htmlFor="exampleFormControlSelect1">
                           Choose a Grand Prix
@@ -107,18 +107,52 @@ class App extends Component { //parent component
                       >
                         Find Track!
                       </button>
-                    {/* </form> */}
+                 
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-md-8">
+            </div> */}
+            <div className="col-md-12">
               <div className="card">
                 <div className="card-header">Circuit Info</div>
-                <div className="card-body" />
+                <div className="card-body">
                 <div className="container">
+          <div className='row'>
+                <div className="col-md-4">
+                    
+                      <div className="form-group">
+                        <h4>
+                          Choose a Grand Prix
+                        </h4>
+                        <select
+                          className="mt-2 mb-4 form-control create-todo-priority"
+                          id="exampleFormControlSelect1"
+                          onChange={this.handleGrandPrixName} 
+                          // defaultValue={this.state}
+                        >
+                        <option value="0" name="grandPrixName">Select Race</option>  
+                        { this.state.raceTracks && this.state.raceTracks.map((race, index) => {
+                          return <option key={index} >{race.name}</option>
+                        })}
+                        </select>
+                      </div>
+                    
+                      <button
+                        onClick={this.handleClick}
+                        type="submit"
+                        className="btn btn-primary btn-block create-todo mb-3"
+                      >
+                        Find Track!
+                      </button>
+                 
+                  </div>
+
+                  <div className="col-md-7">
                 { !!this.state.selected && <Alert race={this.state.selected} />}
                 {/* Selected has a default value of null which is falsey, basically saying if selected is not null do the Alert call */}
+                </div>
+                </div>
+                </div>
                </div>
               </div>
             </div>
