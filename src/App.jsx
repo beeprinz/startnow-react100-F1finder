@@ -74,44 +74,9 @@ class App extends Component { //parent component
     return (
       <div>
         <div className="container">
-          <h1 style={{color: 'white'}}>Formula 1 Track Locator</h1>
+          <h1 className='text-white mt-3'>Formula 1 Track Locator</h1>
           <h5 style={{color: 'white'}}>Discover Circuits Around the World!</h5>
           <div className="row">
-            {/* <div className="col-md-4">
-              <div className="card">
-                
-                <div className="card-body">
-                  <div>
-                    
-                      <div className="form-group">
-                        <label htmlFor="exampleFormControlSelect1">
-                          Choose a Grand Prix
-                        </label>
-                        <select
-                          className="mt-2 mb-4 form-control create-todo-priority"
-                          id="exampleFormControlSelect1"
-                          onChange={this.handleGrandPrixName} 
-                          // defaultValue={this.state}
-                        >
-                        <option value="0" name="grandPrixName">Select Race</option>  
-                        { this.state.raceTracks && this.state.raceTracks.map((race, index) => {
-                          return <option key={index} >{race.name}</option>
-                        })}
-                        </select>
-                      </div>
-                    
-                      <button
-                        onClick={this.handleClick}
-                        type="submit"
-                        className="btn btn-primary btn-block create-todo"
-                      >
-                        Find Track!
-                      </button>
-                 
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div className="col-md-12">
               <div className="card">
                 <div className="card-header">Circuit Info</div>

@@ -11,22 +11,12 @@ export class MapContainer extends React.Component {
           center={{lat: this.props.race.circuit.lat, lng: this.props.race.circuit.lon}}
           
           zoom={14}
-          style={{width: '100%', height: '250px', position: 'relative'}}
-          containerStyle={{position: 'relative', width: '100%', height:'250px'}}
+          style={{width: '100%', height: '350px', position: 'relative'}}
+          containerStyle={{position: 'relative', width: '100%', height:'350px'}}
           >
-
     
             <Marker 
             position={{lat: this.props.race.circuit.lat, lng: this.props.race.circuit.lon}}/>
-    
-            {/* <InfoWindow onClose={this.onInfoWindowClose}>
-                <div>
-                  <h1>{this.state.selectedPlace.name}</h1>
-                </div>
-            </InfoWindow> */}
-
-            {/* {this.props.race.circuit.lat}
-            {this.props.race.circuit.lon} */}
           </Map>
           </div>
         );
